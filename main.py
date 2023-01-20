@@ -11,7 +11,7 @@ from module.arno_info import arno
 from module.shop import shop_start
 from module.weapon import weapon_command
 from module.armor import armor_command
-from module.admin import message_log, proverka_admin, bad_words, ban_user
+from module.admin import message_log, proverka_admin, bad_words, ban_user, da_net
 from module.fms_info import (
 	Form,
 	cancel_handler,
@@ -44,5 +44,7 @@ if __name__ == "__main__":
     dp.register_message_handler(weapon_command, Text(equals="Оружие"))
     dp.register_message_handler(armor_command, Text(equals="Снаряжение"))
     dp.register_message_handler(ban_user, commands=['ban'], commands_prefix='!/')
+    dp.register_message_handler(da_net, commands=['да'], commands_prefix=['!'])
     dp.register_message_handler(bad_words)
-    executor.start_polling(dp)
+
+    executor.start_polling(dp, skip_updates=True)
