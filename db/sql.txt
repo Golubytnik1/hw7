@@ -1,0 +1,31 @@
+PRIMARY KEY
+CREATE TABLE products (
+    product_id INTEGER PRIMARY KEY,
+    name TEXT,
+    descr TEXT,
+    price INTEGER,
+    photo TEXT
+)
+
+CREATE TABLE orders (
+    orders_id INTEGER PRIMARY KEY,
+    name TEXT,
+    userid INTEGER,
+    address INTEGER,
+    day TEXT,
+    product_id INTEGER,
+    FOREIGN KEY (product_id)
+        REFERENCES product(product_id)
+)
+
+INSERT INTO products (
+    name,
+    descr,
+    price,
+    photo
+) VALUES
+('Кузнец Старк', 'Фантастика', 799, './images/1013809628.jpg')
+('Анчелотти', 'Романтика', 1199, './images/1013809628.jpg')
+('Восходящая звезда', 'Боевик', 699, './images/1013809628.jpg')
+
+SELECT * FROM products
