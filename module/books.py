@@ -5,7 +5,7 @@ from db.base import get_products
 
 def buy_books_kb(product_id):
     buy_books_kb = InlineKeyboardMarkup()
-    buy_books_kb.add(InlineKeyboardButton("Приобрести", callback_data=f"buy_books {product_id}"))
+    buy_books_kb.add(InlineKeyboardButton("Приобрести", callback_data=f"buy_books"))
     return buy_books_kb
 
 

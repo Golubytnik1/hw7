@@ -4,7 +4,8 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 shop_kb = ReplyKeyboardMarkup(resize_keyboard=True)
 shop_kb.add(
     KeyboardButton("Оружие"),
-    KeyboardButton("Снаряжение")
+    KeyboardButton("Снаряжение"),
+    KeyboardButton("Книги о легендах")
 )
 
 

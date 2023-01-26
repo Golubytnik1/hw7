@@ -1,6 +1,5 @@
 import sqlite3
 from pathlib import Path
-import db
 
 
 def init():
@@ -87,6 +86,6 @@ def order_process(data):
     db.commit()
 
 
+init()
 create_tables()
 populate_products()
-db.close()
