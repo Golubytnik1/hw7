@@ -3,8 +3,7 @@ from aiogram import types
 
 async def message_log(message: types.Message):
     """
-        Функция для получения сведений
-        о сообщениях в логах
+        Функция для получения сведений о сообщениях в логах
     """
     print(f"{message.chat.type=}")
     print(f"{message.reply_to_message=}")
@@ -57,7 +56,7 @@ async def ban_user(message: types.Message):
 
 async def da_net(message: types.Message):
     '''
-    Функция обрабатывает ответы администраторов беседы и банит пользователя
+        Функция обрабатывает ответы администраторов беседы и банит пользователя
     '''
     if message.chat.type != 'private':
         answer_admin = await proverka_admin(message)

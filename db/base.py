@@ -76,16 +76,9 @@ def order_process(data):
     cur.execute("""INSERT INTO orders(
         username,
         address,
-        day,
         product_id
-    ) VALUES (:user_name,:address,:age,:day,:product_id)""",
-                {'user_name': data['name'],
+    ) VALUES (:user_name,:address,:product_id)""",
+                {'username': data['name'],
                  'address': data['address'],
-                 'day': data['day'],
                  'product_id': data['product_id']})
     db.commit()
-
-
-init()
-create_tables()
-populate_products()

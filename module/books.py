@@ -5,7 +5,7 @@ from db.base import get_products
 
 def buy_books_kb(product_id):
     buy_books_kb = InlineKeyboardMarkup()
-    buy_books_kb.add(InlineKeyboardButton("Приобрести", callback_data=f"buy_books"))
+    buy_books_kb.add(InlineKeyboardButton("Приобрести", callback_data=f"buy_books{product_id}"))
     return buy_books_kb
 
 
@@ -20,18 +20,24 @@ async def show_books(message: types.Message):
 
     await message.answer_photo(
         open(stark_book[4], 'rb'),
-        caption=f'{stark_book[1]}, цена - {stark_book[3]}',
+        caption=f'{stark_book[1]}' 
+                f'Жанр: {stark_book[2]}'
+                f'Цена: {stark_book[3]}',
         reply_markup=buy_books_kb(stark_book)
     )
 
     await message.answer_photo(
         open(anchelotti_book[4], 'rb'),
-        caption=f'{anchelotti_book[1]}, цена - {anchelotti_book[3]}',
+        caption=f'{anchelotti_book[1]}'
+                f'Жанр: {anchelotti_book[2]}'
+                f'Цена: {anchelotti_book[3]}',
         reply_markup=buy_books_kb(anchelotti_book)
     )
 
     await message.answer_photo(
         open(stars_book[4], 'rb'),
-        caption=f'{stars_book[1]}, цена - {stars_book[3]}',
+        caption=f'{stars_book[1]}'
+                f'Жанр: {stars_book[2]}'
+                f'Цена: {stars_book[3]}',
         reply_markup=buy_books_kb(stars_book)
     )
